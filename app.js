@@ -78,13 +78,6 @@ function matchWords(){
     }
 
 }
-//Pick & show random word
-// function showWord(words){
-//     // Generate random array index
-//     const randIndex = Math.floor(Math.random() * words.length);
-//     // Ouput a random word
-//     currentWord.innerHTML = words[randIndex]
-// }
 
 // countdown timer
 function countdown(){
