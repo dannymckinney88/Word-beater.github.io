@@ -23,40 +23,17 @@ const timeDiplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('#seconds');
 
-const words = [
-    'river',
-    'lcuky',
-    'five',
-    'stubborn',
-    'cocktail',
-    'dog',
-    'danny',
-    'establishment',
-    'revolver',
-    'echo',
-    'siblings',
-    'developer',
-    'statue',
-    'hike',
-    'nutrition',
-    'food',
-    'definition',
-    'space',
-    'magic',
-    'fantasy',
-    'hero',
-    'javascript',
-    'cat',
-    'laughter',
-    'high'
-];
 
 // Intialize Game
 function init(){
     //Show number of seconds in UI
     seconds.innerHTML = currentLevel;
     //Load word from array
+
     showWord(words)
+=======
+    randomWord()
+
     // Start Matching on word input
     wordInPut.addEventListener('input', startMatch)
     // Call coutdown ever second
@@ -70,7 +47,9 @@ function startMatch(){
     if(matchWords()){
         isPlaying = true;
         time = currentLevel + 1;
+
         showWord(words);
+        randomWord();
         wordInPut.value = '';
         score++
     }
@@ -81,6 +60,19 @@ function startMatch(){
     socreDisplay.innerHTML = score
     }
 };
+
+
+//Get random word with wordkin API
+function randomWord(){
+    fetch(apiUrl)
+        .then(function(u){
+            return u.json();
+        })
+        .then(function(data){
+            currentWord.innerHTML = data.word;
+        })
+    }
+
 
 //Match current word to wordInput
 function matchWords(){
@@ -93,6 +85,7 @@ function matchWords(){
     }
 
 }
+<<<<<<< HEAD
 //Pick & show random word
 function showWord(words){
     // Generate random array index
