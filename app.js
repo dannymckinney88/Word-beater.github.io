@@ -23,7 +23,6 @@ const timeDiplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('#seconds');
 
-
 // Intialize Game
 function init(){
     //Show number of seconds in UI
@@ -55,7 +54,6 @@ function startMatch(){
     }
 };
 
-
 //Get random word with wordkin API
 function randomWord(){
     fetch(apiUrl)
@@ -67,7 +65,6 @@ function randomWord(){
         })
     }
 
-
 //Match current word to wordInput
 function matchWords(){
     if(wordInPut.value === currentWord.innerHTML){
@@ -78,13 +75,6 @@ function matchWords(){
         return false;
     }
 
-}
-//Pick & show random word
-function showWord(words){
-    // Generate random array index
-    const randIndex = Math.floor(Math.random() * words.length);
-    // Ouput a random word
-    currentWord.innerHTML = words[randIndex]
 }
 
 // countdown timer
