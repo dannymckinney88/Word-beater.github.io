@@ -29,11 +29,7 @@ function init(){
     //Show number of seconds in UI
     seconds.innerHTML = currentLevel;
     //Load word from array
-
-    showWord(words)
-=======
     randomWord()
-
     // Start Matching on word input
     wordInPut.addEventListener('input', startMatch)
     // Call coutdown ever second
@@ -47,8 +43,6 @@ function startMatch(){
     if(matchWords()){
         isPlaying = true;
         time = currentLevel + 1;
-
-        showWord(words);
         randomWord();
         wordInPut.value = '';
         score++
@@ -85,7 +79,6 @@ function matchWords(){
     }
 
 }
-<<<<<<< HEAD
 //Pick & show random word
 function showWord(words){
     // Generate random array index
