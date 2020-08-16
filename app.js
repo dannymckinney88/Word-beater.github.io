@@ -56,6 +56,7 @@ function startMatch(){
 
 //Get random word with wordkin API
 function randomWord(){
+    apiUrl = "http://api.wordnik.com/v4/words.json/randomWord?api_key=v6cirzky1unhnpi8vharo85m04gbtlhidut11axk3a1gmpkzp"
     fetch(apiUrl)
         .then(function(u){
             return u.json();
